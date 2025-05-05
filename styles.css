@@ -1,0 +1,175 @@
+/* root.css */
+
+:root {
+    /* Brand Colors */
+    --primary-color: #32127A;         /* Persian Indigo – Brand / Headers / Nav */
+    --accent-color: #B3446C;          /* Irresistible – Primary CTA / Highlights */
+    --secondary-accent: #008292;      /* Inland Lush – Secondary CTA / Icons */
+  
+    /* Backgrounds & Surfaces */
+    --bg-main: #F0EFED;               /* White Glove – Main background */
+    --bg-alt: #CDE0E1;                /* Beach Foam – Alternating sections/cards */
+    --bg-highlight: #E3CCDC;          /* Naughty Marietta – Card or hover surface */
+  
+    /* Text & Typography */
+    --text-color: #2B2B2B;            /* Graphite – Default body text */
+    --heading-color: var(--primary-color); /* Use primary for headings */
+  
+    /* Status Colors (Optional Enhancements) */
+    --success-color: #00BFA6;         /* Teal Edge – Positive status */
+    --error-color: #F94C10;           /* Safety Coral – Error/warning indicators */
+  
+    /* Borders / Dividers */
+    --border-color: #CCCCCC;
+    --border-soft: #E0E0E0;
+  
+    /* Typography */
+    --font-heading: 'Inter', sans-serif;    
+    --font-body: 'Nunito', sans-serif;
+  }
+  
+  /* Base Styles */
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--heading-color);
+    margin-top: 0;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  section {
+    padding: 4rem 0;
+  }
+  
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary-accent);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* Hero Layout */
+  .hero {
+    background-color: var(--bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 0;
+  }
+  
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-image img {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+  
+  /* Features Grid */
+  .features-grid .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .feature-card {
+    background-color: var(--bg-highlight);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+  }
+  
+  .feature-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  /* Footer */
+  .site-footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+  }
+  
+  /* Navigation */
+  .site-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1.5rem 0;
+  }
+  
+  .site-header .logo {
+    margin: 0;
+    font-size: 1.8rem;
+  }
+  
+  .main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding-left: 0;
+    margin: 1rem 0 0 0;
+  }
+  
+  .main-nav a {
+    color: white;
+    font-weight: 600;
+  }
+  
+  .main-nav a:hover {
+    color: var(--accent-color);
+  }
+  
