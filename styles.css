@@ -1,32 +1,33 @@
 /* root.css */
 
 :root {
-    /* Brand Colors */
-    --primary-color: #32127A;         /* Persian Indigo – Brand / Headers / Nav */
-    --accent-color: #B3446C;          /* Irresistible – Primary CTA / Highlights */
-    --secondary-accent: #008292;      /* Inland Lush – Secondary CTA / Icons */
-  
-    /* Backgrounds & Surfaces */
-    --bg-main: #F0EFED;               /* White Glove – Main background */
-    --bg-alt: #CDE0E1;                /* Beach Foam – Alternating sections/cards */
-    --bg-highlight: #E3CCDC;          /* Naughty Marietta – Card or hover surface */
-  
-    /* Text & Typography */
-    --text-color: #2B2B2B;            /* Graphite – Default body text */
-    --heading-color: var(--primary-color); /* Use primary for headings */
-  
-    /* Status Colors (Optional Enhancements) */
-    --success-color: #00BFA6;         /* Teal Edge – Positive status */
-    --error-color: #F94C10;           /* Safety Coral – Error/warning indicators */
-  
-    /* Borders / Dividers */
-    --border-color: #CCCCCC;
-    --border-soft: #E0E0E0;
-  
-    /* Typography */
-    --font-heading: 'Inter', sans-serif;    
-    --font-body: 'Nunito', sans-serif;
-  }
+  /* Brand Colors */
+  --primary-color: #46A5A1;         /* Teal – Brand / Headers / Nav */
+  --accent-color: #E45864;          /* Coral Red – Primary CTA / Highlights */
+  --secondary-accent: #008292;      /* Inland Lush – Secondary CTA / Icons (unchanged) */
+
+  /* Backgrounds & Surfaces */
+  --bg-main: #F0EFED;               /* White Glove – Main background */
+  --bg-alt: #CDE0E1;                /* Beach Foam – Alternating sections/cards */
+  --bg-highlight: #E3CCDC;          /* Naughty Marietta – Card or hover surface */
+
+  /* Text & Typography */
+  --text-color: #2E384D;            /* Navy – Default body text */
+  --heading-color: var(--primary-color); /* Use primary for headings */
+
+  /* Status Colors (Optional Enhancements) */
+  --success-color: #00BFA6;         /* Teal Edge – Positive status */
+  --error-color: #F94C10;           /* Safety Coral – Error/warning indicators */
+
+  /* Borders / Dividers */
+  --border-color: #CCCCCC;
+  --border-soft: #E0E0E0;
+
+  /* Typography */
+  --font-heading: 'Inter', sans-serif;    
+  --font-body: 'Nunito', sans-serif;
+}
+
   
   /* Base Styles */
   body {
@@ -45,7 +46,7 @@
   }
   
   .container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -60,8 +61,9 @@
   }
   
   a:hover {
-    text-decoration: underline;
+    text-decoration: none;
   }
+
   
   /* Buttons */
   .btn-primary {
@@ -104,16 +106,35 @@
     font-size: 2.5rem;
     margin-bottom: 1rem;
   }
+
+  .hero-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: var(--accent-color); /* #008292 – clean and brand-aligned */
+  }
+  
   
   .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--text-color); /* Already navy, works great over --bg-alt */
+    max-width: 700px;
   }
+  
   
   .hero-image img {
     max-width: 100%;
-    border-radius: 12px;
   }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-left: 25px;
+  }
+  
   
   /* Features Grid */
   .features-grid .grid {
@@ -145,16 +166,22 @@
   }
   
   /* Navigation */
-  .site-header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 1.5rem 0;
+  .site-header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--bg-alt);
   }
   
-  .site-header .logo {
-    margin: 0;
-    font-size: 1.8rem;
+  .logo img {
+    max-height: 75px;
+    width: auto;
+    display: block;
+    margin-left: 50px;
   }
+  
+  
   
   .main-nav ul {
     list-style: none;
@@ -162,14 +189,16 @@
     gap: 2rem;
     padding-left: 0;
     margin: 1rem 0 0 0;
+    margin-right: 50px;
   }
   
   .main-nav a {
-    color: white;
+    color: var(--text-color);
     font-weight: 600;
   }
   
   .main-nav a:hover {
     color: var(--accent-color);
+    text-decoration: none;
   }
   
