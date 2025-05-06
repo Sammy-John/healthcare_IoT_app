@@ -9,22 +9,29 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header class="site-header">
     <div class="container">
+      <!-- Burger Menu Icon -->
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <i data-lucide="menu"></i>
+      </button>
+  
+      <!-- Logo (right aligned) -->
       <a href="/" class="logo">
         <img src="images/logo.png" alt="Healthcare IoT Portal Logo" />
       </a>
+  
+      <!-- Navigation -->
       <nav class="main-nav">
         <ul>
           <li><a href="#overview">Overview</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#resources">Resources</a></li>
           <li><a href="#contribute">Contribute</a></li>
         </ul>
       </nav>
     </div>
   </header>
+  
+  
 
   <!-- Hero Section -->
   <!-- Hero Section -->
@@ -37,13 +44,6 @@
         ConnectedCare is a smart-health-monitoring platform designed
         to support safer, more independant living for older adults and
         individuals with health challenges. 
-      </p>
-      <p>Utilising a micro-server,it gathers real-time data from IoT devices and presents it
-        through a thoughtfully designed interface focused on accessibility.
-      </p> 
-      <p> Using voice-controlled navigiation, to intuitive visuals.
-        Dive into our analysis, explore the design, and access the process
-        of shaping the future of connected care.</p>
       </p>
       <div class="hero-buttons">
         <a href="./Website/contents.html" class="btn-primary">Analysis Report</a>
@@ -59,72 +59,176 @@
 </section>
 
 
-  <!-- Overview Section -->
-  <section id="overview" class="section">
-    <div class="container">
-      <h2>What is the Healthcare IoT App?</h2>
-      <p>
-        This application is a smart health-monitoring portal that collects and displays
-        real-time data from IoT devices using a Raspberry Pi server as its core.
-      </p>
-    </div>
-  </section>
+  <!-- About Section -->
+<section id="overview" class="section about-section">
+  <div class="container">
 
-  <!-- Features Grid -->
-  <section id="features" class="section features-grid">
-    <div class="container">
-      <h2>Key Features</h2>
-      <div class="grid">
-        <div class="feature-card">
+    <!-- Logo + Heading Row -->
+    <div class="about-header">
+      <img src="images/logo.png" alt="ConnectedCare Logo" class="about-logo" />
+      <h2 class="section-heading">What is ConnectedCare?</h2>
+    </div>
+
+    <!-- Intro Paragraphs -->
+    <p>
+      Utilising a micro-server, it gathers real-time data from IoT devices and presents it
+      through a thoughtfully designed interface focused on accessibility.
+    </p>
+    <p> Using voice-controlled navigiation, to intuitive visuals.
+      Dive into our analysis, explore the design, and access the process
+      of shaping the future of connected care.
+    </p>
+
+    <!-- Features Section (Stacked Style) -->
+    <div class="feature-stack">
+
+      <!-- Feature 1 -->
+      <div class="feature-item">
+        <div class="feature-top">
+          <i data-lucide="mic"></i> <!-- Voice-Activated -->
           <h3>Voice-Activated Interface</h3>
+        </div>
           <p>Interact hands-free with your health data using simple voice commands.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Real-Time Monitoring</h3>
-          <p>Live updates from wearables and medical IoT devices to ensure peace of mind.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Caregiver Alerts</h3>
-          <p>Emergency notifications and status reports sent directly to caregivers.</p>
-        </div>
-        <div class="feature-card">
-          <h3>Secure & Private</h3>
-          <p>Data is encrypted and stored securely with user control over sharing settings.</p>
+        <div class="feature-image">
+          <img src="images/medy-siregar-92gUiR6UhVg-unsplash.jpg" alt="Voice command in use" />
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Resources -->
-  <section id="resources" class="section">
-    <div class="container">
-      <h2>Project Resources</h2>
-      <ul class="resource-list">
-        <li><a href="./Website/contents.html">Analysis Report</a></li>
-        <li><a href="./Website/Landing_Page/index.html">Product Prototype</a></li>
-        <li><a href="https://github.com/NabuTech/Healthcare_IoT_App_Project">GitHub Repository</a></li>
-      </ul>
-    </div>
-  </section>
+      <!-- Feature 2 -->
+      <div class="feature-item">
+        <div class="feature-top">
+          <i data-lucide="activity"></i> <!-- Real-Time Monitoring -->
+          <h3>Real-Time Monitoring</h3>
+          </div>
+          <p>Live updates from wearables and medical IoT devices to ensure peace of mind.</p>
+        <div class="feature-image">
+          <img src="images/luke-chesser-JKUTrJ4vK00-unsplash.jpg" alt="Health data chart" />
+        </div>
+      </div>
 
-  <!-- Contribute -->
-  <section id="contribute" class="section">
-    <div class="container">
-      <h2>Want to Get Involved?</h2>
-      <p>
-        We welcome collaboration from developers, healthcare professionals, and caregivers.
-        Your feedback and contributions help improve our solution.
-      </p>
+      <!-- Feature 3 -->
+      <div class="feature-item">
+        <div class="feature-top">
+          <i data-lucide="alert-circle"></i> <!-- Caregiver Alerts -->
+          <h3>Caregiver Alerts</h3>
+        </div>
+          <p>Emergency notifications and status reports sent directly to caregivers.</p>
+        <div class="feature-image">
+          <img src="images/georg-arthur-pflueger-TeWwYARfcM4-unsplash.jpg" alt="Alert on mobile" />
+        </div>
+      </div>
+
+      <!-- Feature 4 -->
+      <div class="feature-item">
+        <div class="feature-top">
+          <i data-lucide="shield-check"></i> <!-- Secure & Private -->
+          <h3>Secure & Private</h3>
+        </div>
+          <p>Data is encrypted and stored securely with user control over sharing settings.</p>
+        <div class="feature-image">
+          <img src="images/dan-nelson-ah-HeguOe9k-unsplash.jpg" alt="Secure connection graphic" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+ <!-- Contribute -->
+<section id="contribute" class="section contribute-section">
+  <div class="container">
+    <h2>Want to Get Involved?</h2>
+    <p>
+      ConnectedCare is an evolving initiative that thrives on collaboration.
+      Whether you're a developer, healthcare professional, caregiver, researcher, or someone with lived experience —
+      your insights and contributions can shape how assistive technology supports independence and well-being.
+    </p>
+    <div class="contribute-buttons">
       <a href="mailto:nabutech@proton.me" class="btn-secondary">Contact Us</a>
+      <a href="https://nabutech.github.io/Healthcare_IoT_App_Project/Website/Landing_Page/learn_more.html" class="btn-primary" target="_blank">Get Involved</a>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 Healthcare IoT App. All rights reserved.</p>
+    <div class="footer-container">
+      
+      <!-- Personal Details (Left Column) -->
+      <div class="footer-col footer-left">
+        <p>Built by <a href="https://teknabu.com/" target="_blank">Teknabu</a> </p>
+        <p><a href="https://sammyjohnrawlinson.teknabu.com/portfolio/" target="_blank">Portfolio</a></p>
+        <p><a href="https://github.com/Sammy-John" target="_blank">GitHub</a> | 
+           <a href="https://linkedin.com/in/sammyjohn" target="_blank">LinkedIn</a> | 
+           <a href="https://sammyjohnrawlinson.teknabu.com/blog/">Blog</a></p>
+      </div>
+  
+      <!-- Project-Specific (Middle Column) -->
+      <div class="footer-col footer-middle">
+        <p>&copy; 2025 ConnectedCare</p>
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="ConnectedCare Logo" />
+        </div>
+      </div>
+  
+      <!-- Extras (Right Column) -->
+      <div class="footer-col footer-right">
+        <p><a href="/privacy">Privacy Policy</a></p>
+        <p><a href="/terms">Terms of Use</a></p>
+        <p><a href="/roadmap">Roadmap</a>
+      </div>
+  
     </div>
   </footer>
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      lucide.createIcons(); // Initialize icons
+  
+      const toggleButton = document.querySelector(".menu-toggle");
+      const nav = document.querySelector(".main-nav");
 
+    if (toggleButton && nav) {
+      toggleButton.addEventListener("click", () => {
+        console.log("Burger clicked");
+        nav.classList.toggle("active");
+      });
+    }
+  });
+
+  // Sticky Header Box-Shadow
+  const header = document.querySelector('.site-header');
+const hero = document.querySelector('.hero');
+
+window.addEventListener('scroll', () => {
+  if (!hero || !header) return;
+
+  const heroBottom = hero.offsetTop + hero.offsetHeight;
+
+  if (window.scrollY > heroBottom) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+  
+      // Animate features on scroll
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+  
+      document.querySelectorAll(".feature-item").forEach(item => {
+        observer.observe(item);
+      });
+  </script>
+  
 </body>
 </html>
