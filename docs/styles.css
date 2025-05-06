@@ -96,6 +96,27 @@
     font-weight: bold;
     cursor: pointer;
   }
+
+  .btn-neutral {
+    background-color: var(--bg-main);
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--secondary-accent);
+    color: var(--secondary-accent);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
   
   /* Hero Layout */
   .hero {
@@ -141,10 +162,12 @@
   .hero-buttons {
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* allow buttons to wrap on smaller screens */
     margin-top: 2rem;
-    margin-left: 25px;
+    margin-left: 50px; /* reset left margin */
+    justify-content: start;
   }
+  
   
   /* === About Section === */
 
@@ -391,6 +414,8 @@
   }
 }
 
+/* Hero */
+
 @media (max-width: 768px) {
   .hero-image {
     display: none;
@@ -402,6 +427,21 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 500px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 1rem; /* prevent edge collisions */
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
 
 /* Footer */
 @media (max-width: 768px) {
