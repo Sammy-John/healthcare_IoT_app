@@ -8,6 +8,8 @@
 - Integration of direct health monitoring devices (e.g., temperature, heart rate).
 - Foundational support for future integration with ambient sensors (e.g., fridge, shower) for behavioral monitoring.
 
+``` HIPPA Compliant```
+
 ## 🚫 Out of Scope (for MVP)
 
 - Integration with Electronic Health Records (EHR) or insurance platforms.

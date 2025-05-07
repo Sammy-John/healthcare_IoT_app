@@ -7,4 +7,6 @@ The core idea behind ConnectedCare is to provide **non-invasive, voice-controlle
 
 ConnectedCare stands apart by combining **real-time data collection**, **cross-platform compatibility**, and a **focus on dignity and accessibility**, filling a critical gap in current health tech offerings.
 
-One of the driving motivations behind this project is the goal of enabling people to **remain in their own homes longer**, rather than transitioning prematurely to assisted living or long-term care facilities. Staying at home is often associated with better mental well-being, autonomy, and quality of life — particularly for individuals facing cognitive decline, mobility challenges, or social isolation. By providing unobtrusive tools for health and behavior monitoring, ConnectedCare supports both safety and independence in a familiar environment.
+The key driving motivations behind this project is the goal of enabling people to **remain in their own homes longer**, rather than transitioning prematurely to assisted living or long-term care facilities. Staying at home is often associated with better mental well-being, autonomy, and quality of life — particularly for individuals facing cognitive decline, mobility challenges, or social isolation. By providing unobtrusive tools for health and behavior monitoring, ConnectedCare supports both safety and independence in a familiar environment.
+
+**Reducing the burden on the healthcare system by supporting remote monitoring.**

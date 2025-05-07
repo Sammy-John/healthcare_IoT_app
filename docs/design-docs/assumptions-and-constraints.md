@@ -19,9 +19,9 @@
 
 Given the sensitive nature of health and behavioral monitoring, special care is taken to ensure:
 
-- **User Consent:** All data collection is opt-in and designed to respect the autonomy of the user.
+- **User Consent:** All data collection is opt-in and designed to respect the autonomy of the patient.
 - **Non-Invasive Monitoring:** Preference is given to ambient and behavioral sensors that avoid direct surveillance (e.g., no cameras or microphones unless explicitly permitted).
-- **Data Minimization:** Only essential data is collected and stored, reducing exposure of personal habits.
+- **Data Minimization:** Only essential data is collected and stored, reducing exposure of personal hygeine habits.
 - **Local Processing:** Health data is processed locally on the device (e.g., Raspberry Pi) where possible to minimize cloud exposure.
 - **Transparent Data Use:** All stakeholders are informed of what data is collected, why, and how it is used.
 - **User Dignity:** Features such as hygiene tracking or meal prep monitoring are designed to alert caregivers discreetly, avoiding embarrassment or perceived surveillance.

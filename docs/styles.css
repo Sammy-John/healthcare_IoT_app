@@ -23,6 +23,9 @@
   --border-color: #CCCCCC;
   --border-soft: #E0E0E0;
 
+  /* Gradients */
+  --hero-gradient: linear-gradient(135deg, var(--bg-highlight), var(--bg-alt));
+
   /* Typography */
   --font-heading: 'Inter', sans-serif;    
   --font-body: 'Nunito', sans-serif;
@@ -76,46 +79,100 @@
   }
   
   
-  /* Buttons */
-  .btn-primary {
-    background-color: var(--accent-color);
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .btn-secondary {
-    background-color: var(--secondary-accent);
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-  }
+/* === Buttons === */
 
-  .btn-neutral {
-    background-color: var(--bg-main);
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .btn-outline {
-    background-color: transparent;
-    border: 2px solid var(--secondary-accent);
-    color: var(--secondary-accent);
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-  }
+.btn-primary {
+  background-color: var(--accent-color);       /* Coral Red */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-accent);   /* Inland Lush */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-neutral {
+  background-color: var(--bg-main);            /* Matches background */
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--secondary-accent);
+  color: var(--secondary-accent);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* === Planning Document Buttons (Theme-Coordinated) === */
+
+.btn-business {
+  background-color: #E45864; /* matches --accent-color */
+  color: #fff;
+}
+
+.btn-objectives {
+  background-color: #46A5A1; /* matches --primary-color */
+  color: #fff;
+}
+
+.btn-constraints {
+  background-color: #008292; /* matches --secondary-accent */
+  color: #fff;
+}
+
+.btn-scope {
+  background-color: var(--error-color); 
+  color: #fff;
+}
+
+/* Hover State - slightly darker tone */
+.btn-business:hover {
+  background-color: #cf4c58;
+}
+
+.btn-objectives:hover {
+  background-color: #3c8e8a;
+}
+
+.btn-constraints:hover {
+  background-color: #006b75;
+}
+
+.btn-scope:hover {
+  background-color: #b36775;
+}
+
+
+/* Shared hover effect */
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-neutral:hover,
+.btn-outline:hover,
+.btn-business:hover,
+.btn-objectives:hover,
+.btn-constraints:hover,
+.btn-scope:hover {
+  opacity: 0.9;
+}
+
   
   
   /* Hero Layout */
@@ -491,3 +548,104 @@
   }
 }
 
+/* === Vision Statement Hero Section (Two Column Layout) === */
+
+.vision-statement.hero-section {
+  background: var(--hero-gradient);
+  padding: 5rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.vision-logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vision-logo {
+  max-height: 240px;
+  width: auto;
+}
+
+.vision-text h2 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+}
+
+.vision-text p {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  color: var(--text-color);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .vision-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .vision-logo {
+    max-height: 90px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* === Sub-heading === */
+.doc-heading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+  text-align: left;
+}
+
+/* === Doc Buttons === */
+.doc-icon-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.doc-icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  padding: 1rem;
+  border: 1.5px solid var(--success-color);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--accent-color); /* link color */
+  font-weight: 600;
+  min-width: 100px;
+  flex: 1 1 auto;
+  max-width: 140px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.doc-icon-btn:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.doc-icon-btn i {
+  width: 28px;
+  height: 28px;
+  stroke: var(--secondary-accent); /* distinct brand-accent */
+  stroke-width: 2.5;
+}
