@@ -725,7 +725,9 @@
     max-height: 140px; /* ⬅️ Bump this up from 90px */
     margin-bottom: 1.5rem;
   }
-}/* === Concept Overview Section === */
+}
+
+/* === Concept Overview Section === */
 .concept-section {
   padding: 4rem 2rem;
   background-color: var(--bg-main);
@@ -747,77 +749,106 @@
   margin: 0 auto;
 }
 
+/* === Flip Setup === */
 .block-problem {
+  perspective: 1200px;
+  position: relative;
+  overflow: visible;
   grid-column: 1 / 2;
-  position: relative; /* for quote-content absolute fallback if needed */
 }
 
-.block-app {
-  grid-column: 2 / 3;
+.flip-inner {
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+  position: relative;
+  min-height: 250px;     /* Adjust based on expected content */
+  height: auto;
 }
 
-.block-audience {
-  grid-column: 1 / 3;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  gap: 2rem;
-  transform: scale(0.95);
-  opacity: 0;
-  transition: opacity 1s ease, transform 0.5s ease;
+
+.block-problem.flipped .flip-inner {
+  transform: rotateY(180deg);
 }
 
-.block-audience.visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* === Concept Block Shared Style === */
-.concept-block {
-  background-color: var(--bg-alt);
-  border-left: 4px solid var(--primary-color);
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
   padding: 1.5rem;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+
+/* === FRONT: Problem Block === */
+.flip-front {
+  background-color: var(--bg-alt);
+  border: 4px solid var(--bg-highlight);
   border-radius: 8px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.concept-block.visible {
   opacity: 1;
-  transform: translateY(0);
+  z-index: 2;
+  font-weight: 450;
 }
 
-.concept-block h3 {
+.flip-front h3 {
   font-size: 1.2rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--heading-color);
+  color: var(--text-color);
   margin-bottom: 1rem;
 }
 
-.app-logo {
-  height: 28px;
-  vertical-align: middle;
-  margin-right: 0.5rem;
-}
-
-/* === List Styling === */
-.concept-block ul {
+.flip-front ul {
   padding-left: 1.25rem;
   margin: 0;
 }
 
-.concept-block li {
+.flip-front li {
   margin-bottom: 0.5rem;
   line-height: 1.6;
   color: var(--text-color);
 }
 
-/* === Animation: Slide in and out === */
+.flip-front,
+.flip-back {
+  min-height: 200px; /* or max expected height */
+}
+
+
+/* === BACK: Quote Block === */
+.flip-back {
+  background: transparent;
+  border: none;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.quote-content {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-color);
+  font-style: italic;
+  max-width: 540px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* === App Block === */
 .block-app {
+  grid-column: 2 / 3;
   transform: translateX(60%);
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  background-color: var(--bg-highlight);
+  border: 4px solid var(--primary-color);
+  border-radius: 8px;
 }
 
 .block-app.visible {
@@ -825,16 +856,57 @@
   opacity: 1;
 }
 
-.block-problem.exit .problem-content {
-  opacity: 0;
-  transform: translateX(-60%);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+.block-app h3 {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
 }
 
-/* === Audience Image Layout === */
-.audience-text {
-  flex: 1 1 55%;
+.block-app ul {
+  padding-left: 1.25rem;
+  margin: 0;
+  font-weight: 400;
 }
+
+.block-app li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+.app-logo {
+  height: 42px;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+/* === Audience Block === */
+.block-audience {
+  grid-column: 1 / 3;
+  display: flex;
+  align-items: stretch;
+  gap: 2rem;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: opacity 1s ease, transform 0.5s ease;
+}
+
+.block-audience.visible {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.audience-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; /* match height of parent */
+}
+
 
 .audience-image {
   flex: 0 0 40%;
@@ -843,46 +915,14 @@
 
 .audience-img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
   border-radius: 12px;
-  object-fit: cover;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* === Embedded Quote Block (inside .block-problem) === */
-.quote-content {
-  opacity: 0;
-  text-align: center;
-  font-style: italic;
-  transition: opacity 0.6s ease;
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  background-color: transparent;
-}
-
-.block-problem.quote-active .problem-content {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.block-problem.quote-active .quote-content {
-  opacity: 1;
-  position: relative;
-}
-
-.quote-content p {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--text-color);
-  max-width: 480px;
-  margin: 0 auto;
-}
-
+ 
 /* === Responsive === */
 @media (max-width: 768px) {
   .concept-section h2 {
@@ -899,16 +939,8 @@
     grid-column: 1 / -1;
   }
 
-  .concept-block {
+  .flip-face {
     padding: 1.25rem;
-  }
-
-  .concept-block h3 {
-    font-size: 1.1rem;
-  }
-
-  .concept-block ul {
-    padding-left: 1rem;
   }
 
   .block-audience {
@@ -921,7 +953,7 @@
   }
 
   .quote-content {
-    position: static;
-    padding: 1rem;
+    font-size: 1.4rem;
   }
 }
+

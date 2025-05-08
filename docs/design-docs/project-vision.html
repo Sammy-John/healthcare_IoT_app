@@ -61,24 +61,30 @@
       <h2>Overview</h2>
       <div class="concept-grid">
         <div class="concept-block block-problem">
-          <div class="problem-content">
-            <h3><i data-lucide="alert-triangle"></i> Problem</h3>
-            <ul>
-              <li>Increasing demand for remote healthcare monitoring</li>
-              <li>Importance of interaction design in healthcare solutions</li>
-              <li>Focus on accessibility and user-centered design</li>
-            </ul>
-          </div>
-        
-          <div class="quote-content">
-            <blockquote>
-              <p>“Designing for dignity, not just data.”</p>
-            </blockquote>
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <div class="problem-content">
+                <h3><!-- <i data-lucide="alert-triangle"></i>--> Problem</h3>
+                <ul>
+                  <li>Increasing demand for remote healthcare monitoring</li>
+                  <li>Importance of interaction design in healthcare solutions</li>
+                  <li>Focus on accessibility and user-centered design</li>
+                </ul>
+              </div>
+            </div>
+            <div class="flip-face flip-back">
+              <blockquote class="quote-content">
+                <p>“Designing for dignity, not just data.”</p>
+              </blockquote>
+            </div>
           </div>
         </div>
         
+        
+        
+        
         <div class="concept-block block-app">
-          <h3><img src="../images/logo.png" alt="ConnectedCare Logo" class="app-logo" /> The App</h3>
+          <h3><img src="../images/logo.png" alt="ConnectedCare Logo" class="app-logo" /> ConnectedCare</h3>
           <ul>
             <li>Utilizes Raspberry Pi to collect data from IoT health devices</li>
             <li>Voice-controlled interface compatible with smart TVs</li>
@@ -148,19 +154,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const app = document.querySelector(".block-app");
   const audience = document.querySelector(".block-audience");
 
-  // Step 1: Problem visible
+  // Initial sequence
   problem.classList.add("visible");
 
-  // Step 2: Show app and swap quote inside block
-  setTimeout(() => {
-    problem.classList.add("quote-active");
-    app.classList.add("visible");
-  }, 2000);
-
-  // Step 3: Show audience
   setTimeout(() => {
     audience.classList.add("visible");
-  }, 4000);
+  }, 3000);
+
+  setTimeout(() => {
+    app.classList.add("visible");
+  }, 5000);
+
+  // Initial flip to quote
+  setTimeout(() => {
+    problem.classList.add("flipped");
+  }, 6500);
+
+  // Looping flip
+  setTimeout(() => {
+    let isFlipped = true;
+    setInterval(() => {
+      isFlipped = !isFlipped;
+      problem.classList.toggle("flipped", isFlipped);
+    }, 9000);
+  }, 9000);
 });
 
 </script>
