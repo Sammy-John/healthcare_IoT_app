@@ -57,54 +57,61 @@
       </div>
     </section>
     
-    <section>
-      <h2>🧠 Concept Overview</h2>
-      <h3>Problem Concept</h3>
-      <ul>
-        <li>Increasing demand for remote healthcare monitoring</li>
-        <li>Importance of interaction design in healthcare solutions</li>
-        <li>Focus on accessibility and user-centered design</li>
-      </ul>
-
-      <h3>The App</h3>
-      <ul>
-        <li>Utilizes Raspberry Pi to collect data from IoT health devices</li>
-        <li>Voice-controlled interface compatible with smart TVs</li>
-        <li>Access also available via smartphone</li>
-      </ul>
-
-      <h3>Target Audience</h3>
-      <ul>
-        <li>Users with disabilities, poor health, or chronic conditions</li>
-        <li>Caregivers/family members needing remote monitoring tools</li>
-        <li>Healthcare professionals using data insights to advise adjustments</li>
-      </ul>
+    <section class="concept-section">
+      <h2>Overview</h2>
+      <div class="concept-grid">
+        <div class="concept-block block-problem">
+          <div class="problem-content">
+            <h3><i data-lucide="alert-triangle"></i> Problem</h3>
+            <ul>
+              <li>Increasing demand for remote healthcare monitoring</li>
+              <li>Importance of interaction design in healthcare solutions</li>
+              <li>Focus on accessibility and user-centered design</li>
+            </ul>
+          </div>
+        
+          <div class="quote-content">
+            <blockquote>
+              <p>“Designing for dignity, not just data.”</p>
+            </blockquote>
+          </div>
+        </div>
+        
+        <div class="concept-block block-app">
+          <h3><img src="../images/logo.png" alt="ConnectedCare Logo" class="app-logo" /> The App</h3>
+          <ul>
+            <li>Utilizes Raspberry Pi to collect data from IoT health devices</li>
+            <li>Voice-controlled interface compatible with smart TVs</li>
+            <li>Access also available via smartphone</li>
+          </ul>
+        </div>
+    
+        <div class="concept-block block-audience">
+          <div class="audience-text">
+            <h3><i data-lucide="users"></i> Target Audience</h3>
+            <ul>
+              <li>Users with disabilities, poor health, or chronic conditions</li>
+              <li>Caregivers/family members needing remote monitoring tools</li>
+              <li>Healthcare professionals using data insights to advise adjustments</li>
+            </ul>
+          </div>
+          <div class="audience-image">
+            <img 
+            src="../images/georg-arthur-pflueger-TeWwYARfcM4-unsplash.jpg" 
+            alt="Illustration representing users and caregivers interacting with ConnectedCare" 
+            loading="lazy" 
+            decoding="async" 
+            width="600" 
+            height="400" 
+            class="audience-img"
+            />          
+          </div>
+        </div>        
+      </div>
+      
     </section>
-
-    <section>
-      <h2>🔍 Comparison to Existing Technologies</h2>
-
-      <h3>Apple Health App</h3>
-      <ul>
-        <li>Visualizations on TV screens using AirPlay</li>
-        <li>Data tracking via Apple Watch or third-party apps</li>
-        <li>Emergency SOS features to alert contacts</li>
-      </ul>
-
-      <h3>Google Fit</h3>
-      <ul>
-        <li>Voice-assisted controls for accessibility</li>
-        <li>Personalized health goals based on tracked data</li>
-        <li>Real-time activity statistics</li>
-      </ul>
-
-      <h3>Amazon Echo Show</h3>
-      <ul>
-        <li>Voice-activated healthcare integration</li>
-        <li>Set voice reminders for medication or routines</li>
-        <li>Video calling with healthcare professionals</li>
-      </ul>
-    </section>
+    
+    
 
     <section>
       <h2>💡 Advantages of ConnectedCare</h2>
@@ -135,6 +142,30 @@
 <script>
   lucide.createIcons();
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const problem = document.querySelector(".block-problem");
+  const app = document.querySelector(".block-app");
+  const audience = document.querySelector(".block-audience");
+
+  // Step 1: Problem visible
+  problem.classList.add("visible");
+
+  // Step 2: Show app and swap quote inside block
+  setTimeout(() => {
+    problem.classList.add("quote-active");
+    app.classList.add("visible");
+  }, 2000);
+
+  // Step 3: Show audience
+  setTimeout(() => {
+    audience.classList.add("visible");
+  }, 4000);
+});
+
+</script>
+
+
 
 </body>
 </html>
