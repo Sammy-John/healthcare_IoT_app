@@ -2,6 +2,7 @@
 
 **Smart, accessible health monitoring powered by IoT and voice-first design.**
 
+[Check Landing Page](https://sammy-john.github.io/healthcare_IoT_app/)
 ---
 
 ## 🧠 Project Vision
@@ -13,6 +14,8 @@ ConnectedCare began as part of my Bachelor's in IT (Web & Software Development),
 - Prototype and Evaluation Report
 
 Rather than a traditional presentation, I built a [project landing page](https://github.com/NabuTech/Healthcare_IoT_App_Project)  to showcase the concept interactively.
+
+[To check latest iteration](https://sammy-john.github.io/healthcare_IoT_app/)
 
 From the early stages, it became clear that this was more than just an assignment. I saw potential in the idea and chose to continue developing it beyond graduation. What you're seeing now is a refined, real-world evolution of that original vision — a healthcare-focused IoT platform driven by accessibility, usability, and meaningful technology
 
