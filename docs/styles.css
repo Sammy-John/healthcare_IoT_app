@@ -1014,7 +1014,6 @@
     grid-template-columns: 1fr;
   }
 }
-
 /* === Documentation Tabs Section === */
 .docs-tabs {
   background-color: var(--bg-main);

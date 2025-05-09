@@ -1,5 +1,4 @@
-# 📈 Business Case Summary
-
+# Business Case 
 
 ConnectedCare addresses a growing global need for remote, accessible healthcare solutions — particularly among aging populations, individuals with chronic conditions, and people with disabilities. Traditional healthcare systems often struggle to provide regular monitoring and personalized support without overwhelming clinical resources or requiring users to travel frequently.
 
