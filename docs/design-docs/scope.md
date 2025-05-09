@@ -62,4 +62,4 @@ In addition to sensor inputs, ConnectedCare may also gather behavioral and usage
 | Geofencing (Optional)     | Room-to-room movement      | Wandering, inactivity, or behavior anomalies      |
 | Medication Dispenser Logs | Usage timestamps           | Prescription adherence tracking                  |
 
-### For privacy and ethical handling of this data, see [Assumptions and Constraints](./assumptions-and-constraints.md)
+### For privacy and ethical handling of this data, see [Assumptions and Constraints](./constraints.md)
