@@ -17,7 +17,7 @@
       </button>
   
       <!-- Logo (right aligned) -->
-      <a href="/" class="logo">
+      <a href="/healthcare_IoT_app/" class="logo">
         <img src="images/logo.png" alt="Healthcare IoT Portal Logo" />
       </a>
   
@@ -47,9 +47,9 @@
         individuals with health challenges. 
       </p>
       <div class="hero-buttons">
-        <a href="./docs/project-vision.html" class="btn-primary">Project Vision</a>
-        <a href="./Website/contents.html" class="btn-neutral">Analysis Report</a>
-        <a href="./Website/Landing_Page/index.html" class="btn-outline">Product Design</a>
+        <a href="./design-docs/project-vision.html" class="btn-primary">Project Vision</a>
+        <a href="#" class="btn-neutral" onclick="showComingSoonModal(); return false;">Analysis Report</a>
+        <a href="#" class="btn-outline" onclick="showComingSoonModal(); return false;">Product Design</a>
       </div>
     </div>
     <div class="hero-image">
@@ -175,13 +175,22 @@
   
       <!-- Extras (Right Column) -->
       <div class="footer-col footer-right">
-        <p><a href="/privacy">Privacy Policy</a></p>
-        <p><a href="/terms">Terms of Use</a></p>
-        <p><a href="/roadmap">Roadmap</a>
+        <p><a href="#" onclick="showComingSoonModal(); return false;">Privacy Policy</a></p>
+        <p><a href="#" onclick="showComingSoonModal(); return false;">Terms of Use</a></p>
+        <p><a href="#" onclick="showComingSoonModal(); return false;">Roadmap</a>
       </div>
   
     </div>
   </footer>
+
+  <!-- Coming Soon Modal -->
+<div id="comingSoonModal" class="modal-overlay hidden">
+  <div class="modal-content">
+    <h2>🚧 Coming Soon</h2>
+    <p>This feature or page is currently under development. Check back soon!</p>
+    <button id="closeModalBtn" class="btn-primary">OK, Got It</button>
+  </div>
+</div>
   
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
@@ -228,6 +237,22 @@ window.addEventListener('scroll', () => {
       document.querySelectorAll(".feature-item").forEach(item => {
         observer.observe(item);
       });
+
+      // Coming Soon Modal!
+      const modal = document.getElementById('comingSoonModal');
+  const closeBtn = document.getElementById('closeModalBtn');
+
+  function showComingSoonModal() {
+    modal.classList.remove('hidden');
+  }
+
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+
+  // Optional: assign globally for reuse
+  window.showComingSoonModal = showComingSoonModal;
+
   </script>
   
 </body>
