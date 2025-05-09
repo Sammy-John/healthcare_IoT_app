@@ -15,7 +15,7 @@
       </a>
       <nav class="main-nav">
         <ul>
-          <li><a href="/index.html">Home</a></li>
+          <li><a href="../index.html">Home</a></li>
           <li><a href="../Website/contents.html">Analysis Report</a></li>
           <li><a href="../Website/Landing_Page/index.html">Product Design</a></li>
         </ul>
@@ -36,23 +36,23 @@
           </p>
           <h3 class="doc-heading">Documentation</h3>
           <div class="doc-icon-buttons">
-            <a href="./planning/business-case-summary.md" class="doc-icon-btn">
+            <a href="documentation.html?tab=business" class="doc-icon-btn">
               <i data-lucide="lightbulb"></i>
               <span>Business Case</span>
             </a>
-            <a href="./planning/objectives.md" class="doc-icon-btn">
+            <a href="documentation.html?tab=objectives" class="doc-icon-btn">
               <i data-lucide="target"></i>
               <span>Objectives</span>
             </a>
-            <a href="./planning/assumptions-and-constraints.md" class="doc-icon-btn">
+            <a href="documentation.html?tab=constraints" class="doc-icon-btn">
               <i data-lucide="shield-check"></i>
               <span>Constraints</span>
             </a>
-            <a href="./planning/project-scope.md" class="doc-icon-btn">
+            <a href="documentation.html?tab=scope" class="doc-icon-btn">
               <i data-lucide="map"></i>
               <span>Scope</span>
             </a>
-          </div>
+          </div>          
         </div>
       </div>
     </section>
@@ -116,32 +116,64 @@
       </div>
       
     </section>
-    
-    
-
-    <section>
+    <section class="advantages-section">
       <h2>💡 Advantages of ConnectedCare</h2>
-      <ul>
-        <li><strong>Elderly-Friendly:</strong> Emphasis on intuitive voice control</li>
-        <li><strong>Comprehensive Monitoring:</strong> Covers vitals, conditions, and medication adherence</li>
-        <li><strong>Real-Time Visualization:</strong> Displays live data on the TV for immediate awareness</li>
-        <li><strong>Holistic Health Solution:</strong> Combines monitoring with user interaction and accessibility</li>
-      </ul>
+      <div class="advantages-grid">
+        <div class="advantage-item">
+          <img src="../images/georg-arthur-pflueger-TeWwYARfcM4-unsplash.jpg" alt="Voice Control" />
+          <h3>Elderly-Friendly</h3>
+          <p>Emphasis on intuitive voice control to ensure accessibility for seniors and users with limited mobility.</p>
+        </div>
+        <div class="advantage-item">
+          <img src="../images/adv-monitoring.png" alt="Monitoring Vitals" />
+          <h3>Comprehensive Monitoring</h3>
+          <p>Track vitals, chronic conditions, and medication adherence in real-time with reliable IoT integration.</p>
+        </div>
+        <div class="advantage-item">
+          <img src="../images/adv-visual.png" alt="TV Visualization" />
+          <h3>Real-Time Visualization</h3>
+          <p>Live data displayed on TV screens offers instant feedback and family-friendly monitoring.</p>
+        </div>
+        <div class="advantage-item">
+          <img src="../images/adv-holistic.png" alt="Holistic Care" />
+          <h3>Holistic Health Solution</h3>
+          <p>Combines seamless data monitoring with caregiver communication and accessibility features.</p>
+        </div>
+      </div>
     </section>
+    
+    
+    
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-container">
-      <div class="footer-left">
-        <p>Built by <a href="https://teknabu.com/">Teknabu</a></p>
+      
+      <!-- Personal Details (Left Column) -->
+      <div class="footer-col footer-left">
+        <p>Built by <a href="https://teknabu.com/" target="_blank">Teknabu</a> </p>
+        <p><a href="https://sammyjohnrawlinson.teknabu.com/portfolio/" target="_blank">Portfolio</a></p>
+        <p><a href="https://github.com/Sammy-John" target="_blank">GitHub</a> | 
+           <a href="https://linkedin.com/in/sammyjohn" target="_blank">LinkedIn</a> | 
+           <a href="https://sammyjohnrawlinson.teknabu.com/blog/">Blog</a></p>
       </div>
-      <div class="footer-middle">
+  
+      <!-- Project-Specific (Middle Column) -->
+      <div class="footer-col footer-middle">
         <p>&copy; 2025 ConnectedCare</p>
-        <img src="../images/logo.png" alt="ConnectedCare Logo" />
+        <div class="footer-logo">
+          <img src="../images/logo.png" alt="ConnectedCare Logo" />
+        </div>
       </div>
-      <div class="footer-right">
+  
+      <!-- Extras (Right Column) -->
+      <div class="footer-col footer-right">
         <p><a href="/privacy">Privacy Policy</a></p>
+        <p><a href="/terms">Terms of Use</a></p>
+        <p><a href="/roadmap">Roadmap</a>
       </div>
+  
     </div>
   </footer>
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -179,6 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 9000);
   }, 9000);
 });
+
 
 </script>
 

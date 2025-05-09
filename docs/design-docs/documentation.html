@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Docs</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <!-- Burger Menu Icon -->
+      <button class="menu-toggle" aria-label="Toggle navigation">
+        <i data-lucide="menu"></i>
+      </button>
+  
+      <!-- Logo (right aligned) -->
+      <a href="/" class="logo">
+        <img src="../images/logo.png" alt="Healthcare IoT Portal Logo" />
+      </a>
+  
+      <!-- Navigation -->
+      <nav class="main-nav">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./project-vision.html">Project Vision</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="docs-tabs">
+    <!-- Tabs Header -->
+<div class="docs-tabs">
+    <div class="tabs-header">
+      <button class="tab-link active" data-tab="business">
+        <i data-lucide="lightbulb"></i>
+        <span>Business Case</span>
+      </button>
+      <button class="tab-link" data-tab="objectives">
+        <i data-lucide="target"></i>
+        <span>Objectives</span>
+      </button>
+      <button class="tab-link" data-tab="constraints">
+        <i data-lucide="shield-check"></i>
+        <span>Constraints</span>
+      </button>
+      <button class="tab-link" data-tab="scope">
+        <i data-lucide="map"></i>
+        <span>Scope</span>
+      </button>
+    </div>
+  
+    <!-- Tab Content Containers (empty, filled by JS) -->
+    <div class="tab-content">
+      <div id="tab-business" class="tab-panel active"></div>
+      <div id="tab-objectives" class="tab-panel"></div>
+      <div id="tab-constraints" class="tab-panel"></div>
+      <div id="tab-scope" class="tab-panel"></div>
+    </div>
+  </div>
+      
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Personal Details (Left Column) -->
+      <div class="footer-col footer-left">
+        <p>Built by <a href="https://teknabu.com/" target="_blank">Teknabu</a> </p>
+        <p><a href="https://sammyjohnrawlinson.teknabu.com/portfolio/" target="_blank">Portfolio</a></p>
+        <p><a href="https://github.com/Sammy-John" target="_blank">GitHub</a> | 
+           <a href="https://linkedin.com/in/sammyjohn" target="_blank">LinkedIn</a> | 
+           <a href="https://sammyjohnrawlinson.teknabu.com/blog/">Blog</a></p>
+      </div>
+  
+      <!-- Project-Specific (Middle Column) -->
+      <div class="footer-col footer-middle">
+        <p>&copy; 2025 ConnectedCare</p>
+        <div class="footer-logo">
+          <img src="../images/logo.png" alt="ConnectedCare Logo" />
+        </div>
+      </div>
+  
+      <!-- Extras (Right Column) -->
+      <div class="footer-col footer-right">
+        <p><a href="/privacy">Privacy Policy</a></p>
+        <p><a href="/terms">Terms of Use</a></p>
+        <p><a href="/roadmap">Roadmap</a>
+      </div>
+  
+    </div>
+  </footer>
+  
+   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+   <script src="https://unpkg.com/lucide@latest"></script>
+   
+    <script>
+        const tabs = document.querySelectorAll('.tab-link');
+        const panels = document.querySelectorAll('.tab-panel');
+
+        function showTab(tabKey) {
+            tabs.forEach(tab => {
+            tab.classList.toggle('active', tab.dataset.tab === tabKey);
+            });
+
+            panels.forEach(panel => {
+            panel.classList.toggle('active', panel.id === `tab-${tabKey}`);
+            });
+
+            const panel = document.getElementById(`tab-${tabKey}`);
+            if (panel && !panel.dataset.loaded) {
+            fetch(`./planning/${tabKey}.md`)
+                .then(res => {
+                if (!res.ok) throw new Error('Document not found.');
+                return res.text();
+                })
+                .then(md => {
+                panel.innerHTML = marked.parse(md);
+                panel.dataset.loaded = true;
+                lucide.createIcons();
+                })
+                .catch(err => {
+                panel.innerHTML = `<p><strong>Error:</strong> ${err.message}</p>`;
+                });
+            }
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const defaultTab = tabs[0].dataset.tab;
+        const activeTab = params.get('tab') || defaultTab;
+        showTab(activeTab);
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+            const tabKey = tab.dataset.tab;
+            showTab(tabKey);
+            history.replaceState(null, '', `?tab=${tabKey}`);
+            });
+        });
+      </script>
+      
+    
+</body>
+</html>
