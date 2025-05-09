@@ -110,7 +110,7 @@
 
             const panel = document.getElementById(`tab-${tabKey}`);
             if (panel && !panel.dataset.loaded) {
-            fetch(`./planning/${tabKey}.md`)
+            fetch(`${tabKey}.md`)
                 .then(res => {
                 if (!res.ok) throw new Error('Document not found.');
                 return res.text();
